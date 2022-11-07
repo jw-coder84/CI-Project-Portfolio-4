@@ -10,4 +10,6 @@ class BookAdmin(SummernoteModelAdmin):
     summernote_fields = ('synopsis')
 
 
-admin.site.register(Genre)
+@admin.register(Genre)
+class GenreAdmin(admin.ModelAdmin):
+    pass

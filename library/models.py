@@ -25,7 +25,7 @@ class Book(models.Model):
         help_text='Enter a brief description of the book'
     )
     isbn = models.CharField('ISBN', max_length=13, unique=True)
-    genre = models.ManyToManyField(Genre, related_name='book_genre')
+    genre = models.ManyToManyField(Genre)
 
     def __str__(self):
         return self.title
