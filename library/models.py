@@ -13,6 +13,7 @@ class Genre(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True)
     cover = models.ImageField(
                     height_field=398,
                     width_field=261,
