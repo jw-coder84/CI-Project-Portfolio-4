@@ -15,17 +15,22 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     cover = models.ImageField(
-                    height_field=398,
-                    width_field=261,
                     null=True,
     )
     author = models.CharField(max_length=200)
     synopsis = models.TextField(
-        max_length=1000,
+        max_length=2000,
         help_text='Enter a brief description of the book'
     )
     isbn = models.CharField('ISBN', max_length=13, unique=True)
     genre = models.ManyToManyField(Genre)
+
+    def display_genre(self):
+        """Creates a string for the Genre.
+        This is required to display genre in Admin."""
+        return ', '.join([genre.name for genre in self.genre.all()[:3]])
+
+    display_genre.short_description = 'Genre'
 
     def __str__(self):
         return self.title
