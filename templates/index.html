@@ -15,9 +15,9 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="image-container">
-                        {% book.cover %}
+                        {{ book.cover }}
                     </div>
-                    <a href="{% url '#' book.slug %}" class="book-link">
+                    <a href="" class="book-link">
                         <h2 class="card-title">{{ book.title }}</h2>
                     </a>
                 </div>
