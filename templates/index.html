@@ -17,7 +17,7 @@
                     <div class="image-container">
                         <img src="{{ book.cover.url }}">
                     </div>
-                    <a href="" class="book-link">
+                    <a href="{% url 'book_detail' book.slug %}" class="book-link">
                         <h2 class="card-title">{{ book.title }}</h2>
                     </a>
                 </div>
