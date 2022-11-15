@@ -5,6 +5,6 @@ from .models import Book, Genre
 
 class BookList(generic.ListView):
     model = Book
-    queryset = Book.objects.order_by('-title')
+    queryset = Book.objects.order_by('title')
     template_name = 'index.html'
     paginate_by = 6
