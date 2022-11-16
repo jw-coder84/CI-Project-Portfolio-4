@@ -16,6 +16,7 @@ class BookDetail(View):
         queryset = Book.objects
         post = get_object_or_404(queryset, slug=slug)
         cover = Book.cover
+        genre = Book.genre
 
         return render(
             request,
@@ -23,6 +24,7 @@ class BookDetail(View):
             {
                 'book': post,
                 'cover': cover,
+                'genre': genre,
             },
         )
 
@@ -30,6 +32,7 @@ class BookDetail(View):
         queryset = Book.objects
         post = get_object_or_404(queryset, slug=slug)
         cover = Book.cover
+        genre = Book.genre
 
         return render(
             request,
@@ -37,5 +40,6 @@ class BookDetail(View):
             {
                 'book': post,
                 'cover': cover,
+                'genre': genre,
             },
         )
