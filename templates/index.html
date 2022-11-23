@@ -11,16 +11,14 @@
  <div class="col-12 mt-3 left">
     <div class="row">
         {% for book in book_list %}
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="image-container">
-                        <img src="{{ book.cover.url }}" width="154" height="240">
-                    </div>
-                    <a href="{% url 'book_detail' book.slug %}" class="book-link">
-                        <h6 class="card-title">{{ book.title }}</h6>
-                    </a>
+        <div class="col-sm-2">
+            <div class="card-body">
+                 <div class="image-container">
+                    <img src="{{ book.cover.url }}" width="154" height="240">
                 </div>
+                <a href="{% url 'book_detail' book.slug %}" class="book-link">
+                    <h6 class="card-title">{{ book.title }}</h6>
+                </a>
             </div>
         </div>
 
