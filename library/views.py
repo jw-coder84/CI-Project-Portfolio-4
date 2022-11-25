@@ -4,10 +4,14 @@ from django.http import HttpResponseRedirect
 from .models import Book, Genre
 
 
+def index(request):
+    return render(request, 'index.html')
+
+
 class BookList(generic.ListView):
     model = Book
     queryset = Book.objects.order_by('title')
-    template_name = 'index.html'
+    template_name = 'book_list.html'
     paginate_by = 6
 
 

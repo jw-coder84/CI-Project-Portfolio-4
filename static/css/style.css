@@ -16,13 +16,22 @@ body {
     justify-content: center;
 
     position: relative;
+}
 
+.opaque-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .site-name {
-    font-family: 'Fredericka the Great', cursive;
-    color: #F9FAFC;
+    font-family: 'Fredericka the Great', Courier;
+    color: white;
     font-size: 120px;
+    mix-blend-mode:lighten;
 }
 
 .brand {

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="col-12 mt-3 left">
+    <div class="row">
+        {% for book in book_list %}
+        <div class="col-md-3">
+            <div class="card-body">
+                 <div class="image-container">
+                    <img src="{{ book.cover.url }}" width="154" height="240">
+                </div>
+                <a href="{% url 'book_detail' book.slug %}" class="book-link">
+                    <h6 class="card-title">{{ book.title }}</h6>
+                </a>
+            </div>
+        </div>
+
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+            {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+ 
+{% endblock %}
