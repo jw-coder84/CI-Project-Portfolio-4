@@ -7,4 +7,5 @@ urlpatterns = [
     path("", views.index, name="index"),
     path('books', views.BookList.as_view(), name='book_list'),
     path('<slug:slug>/', views.BookDetail.as_view(), name='book_detail'),
+    path('borrow/<book_isbn>', views.BookDetail.borrow_book, name='borrow'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

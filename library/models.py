@@ -24,6 +24,7 @@ class Book(models.Model):
     )
     isbn = models.CharField('ISBN', max_length=13, unique=True)
     genre = models.ManyToManyField(Genre)
+    borrowed = models.BooleanField(null=False, blank=False, default=False)
 
     def display_genre(self):
         """Creates a string for the Genre.
