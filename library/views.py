@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Book, Genre, BookIssued
+from .forms import BookBorrow
 
 
 def index(request):
@@ -21,7 +22,6 @@ class BookDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         cover = Book.cover
         genre = Book.genre
-        borrowed = Book.borrowed
 
         return render(
             request,
@@ -30,7 +30,8 @@ class BookDetail(View):
                 'book': post,
                 'cover': cover,
                 'genre': genre,
-                'borrowed': borrowed
+                'checked_out': False,
+                'borrow_form': BookBorrow(),
             },
         )
 
@@ -39,7 +40,18 @@ class BookDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         cover = Book.cover
         genre = Book.genre
-        borrowed = Book.borrowed
+        title = Book.title
+
+        borrow_form = BookBorrow(data=request.POST)
+
+        if borrow_form.is_valid():
+            borrow_form.instance.borrower = request.user.username
+            borrow_form.instance.book = post
+            borrow = borrow_form.save(commit=False)
+            borrow.post = post
+            borrow.save()
+        else:
+            borrow_form = BookBorrow()
 
         return render(
             request,
@@ -48,18 +60,7 @@ class BookDetail(View):
                 'book': post,
                 'cover': cover,
                 'genre': genre,
-                'borrowed': borrowed
-            },
-        )
-
-    def borrow_book(request, book_isbn):
-        book = get_object_or_404(Book, isbn=book_isbn)
-        book.borrowed = not book.borrowed
-        book.save()
-        return render(
-            request,
-            'book_detail.html',
-            context={
-                'book': book,
+                'checked_out': True,
+                'borrow_form': BookBorrow()
             },
         )

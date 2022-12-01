@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from datetime import datetime, timedelta
 import uuid
 
 
@@ -24,7 +25,6 @@ class Book(models.Model):
     )
     isbn = models.CharField('ISBN', max_length=13, unique=True)
     genre = models.ManyToManyField(Genre)
-    borrowed = models.BooleanField(null=False, blank=False, default=False)
 
     def display_genre(self):
         """Creates a string for the Genre.
@@ -38,9 +38,18 @@ class Book(models.Model):
 
 
 class BookIssued(models.Model):
+    expiry = datetime.today() + timedelta(days=14)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     book = models.ForeignKey('Book', on_delete=models.RESTRICT, null=True)
-    return_date = models.DateField(null=True, blank=True)
+    return_date = models.DateField(default=expiry)
+    borrower = models.CharField(max_length=80)
+
+    @property
+    def is_overdue(self):
+        """Determines if the book is overdue based
+        on due date and current date."""
+        return bool(self.return_date and date.today() > self.return_date)
+
     LOAN_STATUS = (
         ('co', 'Checked out'),
         ('a', 'Available'),
@@ -50,7 +59,7 @@ class BookIssued(models.Model):
         max_length=2,
         choices=LOAN_STATUS,
         blank=True,
-        default='a',
+        default='co',
         help_text='Book availability',
     )
 

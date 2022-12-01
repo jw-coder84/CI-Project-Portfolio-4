@@ -1,5 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
+{% load crispy_forms_tags %}
+
 
 <div class="container">
     <div class="row">
@@ -10,16 +12,20 @@
           <strong>Author: </strong>{{ book.author }} <br>
           <strong>Genre: </strong>{{ book.genre.all|join:", " }} <br>
           <strong>ISBN: </strong>{{ book.isbn }} <br>
-          {% if book.borrowed %}
-            <strong>On Loan</strong>
-            <a href="/borrow/{{ book.isbn }}">
-              <button>Return</button>
-            </a>
+
+          {% if checked_out %}
+          <div class="alert alert-success" role="alert">
+              This book has been checked out
+          </div>
           {% else %}
-            <strong>Available</strong>
-            <a href="/borrow/{{ book.isbn }}">
-              <button>Check Out</button>
-            </a>
+
+          {% if user.is_authenticated %}
+          <form method="post" style="margin-top: 1.3em;">
+            {{ borrow_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-signup btn-lg">Checkout</button>
+          </form>
+          {% endif %}
           {% endif %}
         </p>
       </div>

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, Genre
+from .models import Book, Genre, BookIssued
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -16,3 +16,10 @@ class BookAdmin(SummernoteModelAdmin):
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(BookIssued)
+class BookIssuedAdmin(admin.ModelAdmin):
+
+    list_display = ('id', 'book', 'return_date', 'status', 'borrower')
+    list_filter = ('status',)
