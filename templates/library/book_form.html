@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<form action="" enctype="multipart/form-data" method="post" style="margin-top: 1.3em; margin-left: 1.3em;" class="row row-cols-lg-auto g-3 align-items-center">
+  <div class="col-12">
+    {{ form | crispy }}
+    {% csrf_token %}
+    <br>
+    <button type="submit" class="btn btn-signup btn-lg" onsubmit="alert('Book has been added')">Submit</button>
+  </div>
+</form>
+{% endblock %}

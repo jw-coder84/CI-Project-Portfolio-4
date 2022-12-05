@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
+from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
 from .models import Book, Genre, BookIssued
 from .forms import BookBorrow
@@ -64,3 +65,8 @@ class BookDetail(View):
                 'borrow_form': BookBorrow()
             },
         )
+
+
+class AddBook(CreateView):
+    model = Book
+    fields = ['title', 'author', 'synopsis', 'isbn', 'genre', 'cover']
