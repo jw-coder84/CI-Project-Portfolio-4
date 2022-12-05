@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.urls import reverse_lazy
 from django.views import generic, View
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from .models import Book, Genre, BookIssued
 from .forms import BookBorrow
@@ -70,3 +71,13 @@ class BookDetail(View):
 class AddBook(CreateView):
     model = Book
     fields = ['title', 'author', 'synopsis', 'isbn', 'genre', 'cover']
+
+
+class UpdateBook(UpdateView):
+    model = Book
+    fields = ['title', 'author', 'synopsis', 'isbn', 'genre', 'cover']
+
+
+class DeleteBook(DeleteView):
+    model = Book
+    success_url = reverse_lazy('book_list')

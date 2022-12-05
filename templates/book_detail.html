@@ -27,6 +27,10 @@
           </form>
           {% endif %}
           {% endif %}
+          {% if user.is_superuser %}
+            <a class="bg-dark bg-gradient text-info" href="{% url 'update_book' book.slug %}">Update Book Details</a><br>
+            <a class="bg-dark bg-gradient text-info" href="{% url 'delete_book' book.slug %}">Delete Book</a>
+          {% endif %}
         </p>
       </div>
       <div class="col">

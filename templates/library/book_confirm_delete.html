@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<h1>Delete Author</h1>
+
+<p>Are you sure you want to delete the book: {{ book }}?</p>
+
+<form action="" method="POST" style="margin-top: 1.3em; margin-left: 1.3em;" class="row row-cols-lg-auto g-3 align-items-center">
+    {{ form | crispy }}
+    {% csrf_token %}
+    <input type="submit" class="btn btn-signup btn-lg" value="Yes, delete." />
+</form>
+
+{% endblock %}
