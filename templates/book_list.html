@@ -2,7 +2,8 @@
 
 {% block content %}
 
-<div class="col-12 mt-3 left">
+<div class="col-12 left book-list">
+    <div class="opaque-overlay">&nbsp;</div>
     <div class="row">
         {% for book in book_list %}
         <div class="col-md-3">
@@ -11,7 +12,7 @@
                     <img src="{{ book.cover.url }}" width="154" height="240">
                 </div>
                 <a href="{% url 'book_detail' book.slug %}" class="book-link">
-                    <h6 class="card-title">{{ book.title | truncatechars:19}}</h6>
+                    <h6 class="card-title book-title">{{ book.title | truncatechars:19}}</h6>
                 </a>
             </div>
         </div>

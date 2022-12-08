@@ -18,6 +18,13 @@ class BookList(generic.ListView):
     paginate_by = 6
 
 
+class GenreList(generic.ListView):
+    model = Genre
+    queryset = Genre.objects.order_by('name')
+    template_name = 'genre_list.html'
+    paginate_by = 6
+
+
 class BookDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Book.objects

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="col-12 left book-list">
+    <div class="opaque-overlay">&nbsp;</div>
+    <div class="row">
+        {% for genre in genre_list %}
+        <div class="col-md-3">
+            <div class="card-body">
+                <a href="{% url 'book_list' %}" class="book-link">
+                    <h6 class="genre-name">{{ genre }}</h6>
+                </a>
+            </div>
+        </div>
+
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+            {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

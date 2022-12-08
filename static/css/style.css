@@ -18,6 +18,17 @@ body {
     position: relative;
 }
 
+.book-list {
+    height: 80vh;
+
+    background: url('../images/book-list.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
 .opaque-overlay {
     position: absolute;
     top: 0;
@@ -27,11 +38,26 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.book-title {
+
+    mix-blend-mode:lighten;
+    color: white;
+
+}
+
 .site-name {
     font-family: 'Fredericka the Great', Courier;
     color: white;
     font-size: 120px;
     mix-blend-mode:lighten;
+}
+
+.genre-name {
+    font-family: 'Fredericka the Great', Courier;
+    color: white;
+    font-size: 40px;
+    mix-blend-mode:lighten;
+
 }
 
 .brand {
@@ -67,6 +93,8 @@ body {
 }
 
 .image-container {
+    /* border: #23BBBB, 2px;
+    border-radius: 95%; */
     position: relative;
 }
 
