@@ -6,10 +6,10 @@
     <div class="opaque-overlay">&nbsp;</div>
     <div class="row">
         {% for book in book_list %}
-        <div class="col-md-3">
+        <div class="col-sm-2">
             <div class="card-body">
                  <div class="image-container">
-                    <img src="{{ book.cover.url }}" width="154" height="240">
+                    <img src="{{ book.cover.url }}" width="154" height="240" class="border border-warning rounded-3 border-3 mx-auto">
                 </div>
                 <a href="{% url 'book_detail' book.slug %}" class="book-link">
                     <h6 class="card-title book-title">{{ book.title | truncatechars:19}}</h6>
@@ -17,7 +17,7 @@
             </div>
         </div>
 
-            {% if forloop.counter|divisibleby:3 %}
+            {% if forloop.counter|divisibleby:6 %}
             </div>
             <div class="row">
             {% endif %}
