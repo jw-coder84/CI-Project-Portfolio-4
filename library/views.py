@@ -25,6 +25,14 @@ class GenreList(generic.ListView):
     paginate_by = 6
 
 
+class BookIssued(generic.ListView):
+    model = BookIssued
+    queryset = BookIssued.objects.filter(status__exact='co').order_by('return_date')
+    template_name = 'books_issued.html'
+    paginate_by = 20
+    context_object_name = 'books_issued'
+
+
 class BookDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Book.objects
