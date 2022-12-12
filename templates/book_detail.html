@@ -3,12 +3,13 @@
 {% load crispy_forms_tags %}
 
 
-<div class="container">
+<div class="container-fluid book-detail-bg">
+
     <div class="row">
       <div class="col">
-        <img src="{{ book.cover.url }}">
-        <p>
-          <strong>Title: </strong>{{ book.title }} <br>
+        <img src="{{ book.cover.url }}" class="border border-warning rounded-3 border-5">
+        <p class="book-detail-content">
+          <strong>Title: </strong>{{ book.title }} </span><br>
           <strong>Author: </strong>{{ book.author }} <br>
           <strong>Genre: </strong>{{ book.genre.all|join:", " }} <br>
           <strong>ISBN: </strong>{{ book.isbn }} <br>

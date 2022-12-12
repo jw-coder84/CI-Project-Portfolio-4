@@ -60,6 +60,22 @@ body {
 
 }
 
+.book-detail-bg {
+    height: 80vh;
+
+    background: url('../images/book-detail.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+
+}
+
+.book-detail-content {
+    color: white;
+}
+
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
