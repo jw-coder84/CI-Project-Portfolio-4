@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html class="h-100">
   <head>
     <title>Book Central</title>
     <meta charset="utf-8">
@@ -16,10 +16,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   </head>
   <body class="d-flex flex-column h-100 main-bg">
-    <nav id="navbar-nav1" class="navbar navbar-expand-lg bg-dark bg-gradient">
+    <nav id="navbar-nav1" class="navbar navbar-expand bg-dark bg-gradient">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNav">
-          {% block nav %}
             <ul class="navbar-nav">
               <li class="nav-item"><a class="nav-link text-info" href="{% url 'index' %}">Home</a></li>
               <li class="nav-item"><a class="nav-link text-info" href="{% url 'book_list' %}">All books</a></li>
@@ -45,7 +44,6 @@
               </li>
               {% endif %}
             </ul>
-          {% endblock %}
         </div>
       </div>
     </nav>
