@@ -19,7 +19,7 @@ body {
 }
 
 .book-list {
-    height: auto;
+    height: 80vh;
 
     background: url('../images/book-list.jpg') no-repeat center center;
     -webkit-background-size: cover;
@@ -27,6 +27,26 @@ body {
     -o-background-size: cover;
  
     background-size: cover;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+ 
+    position: relative;
+}
+
+.genre-list {
+    height: 80vh;
+
+    background: url('../images/book-list.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+ 
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
  
     position: relative;
 }
@@ -45,11 +65,6 @@ body {
     color: white;
 }
 
-.book-synopsis {
-    overflow-y: scroll;
-    height: 600px;
-}
-
 .site-name {
     font-family: 'Fredericka the Great', Courier;
     color: white;
@@ -57,12 +72,6 @@ body {
     mix-blend-mode:lighten;
 }
 
-@media screen and (max-width: 576px) {
-
-    .site-name {
-        font-size: 80px;
-    }
-}
 
 .genre-name {
     font-family: 'Fredericka the Great', Courier;
@@ -73,7 +82,7 @@ body {
 }
 
 .book-detail-bg {
-    height: auto;
+    height: 80vh;
 
     background: url('../images/book-detail.jpg') no-repeat center center;
     -webkit-background-size: cover;
@@ -89,6 +98,14 @@ body {
 .book-detail-content {
     color: white;
     mix-blend-mode: lighten;
+    width: 300px;
+    word-wrap: break-word;
+}
+
+.book-synopsis {
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 600px;
 }
 
 .brand {
@@ -196,4 +213,57 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .book-list {
+        height: auto;
+    
+    }
+
+    .book-detail-bg {
+        height: auto;
+    
+    }
+
+    .book-synopsis {
+        margin-top: 50px;
+        overflow-y: scroll;
+        height: 400px;
+    }
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+        .site-name {
+            font-size: 80px;
+        }
+
+        .genre-list {
+            height: auto;
+        }
+
+        .book-list {
+            height: auto;
+        
+        }
+    
+        .book-synopsis {
+            margin-top: 0;
+            background-color: #F9FAFC;
+            overflow-y: scroll;
+            height: 400px;
+        }
+ 
+
+        .book-detail-content {
+            color: black;
+            mix-blend-mode:hard-light;
+            width: 300px;
+            word-wrap: break-word;
+        }
 }

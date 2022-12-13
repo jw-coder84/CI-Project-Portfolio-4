@@ -4,44 +4,40 @@
 
 
 <div class="container-fluid book-detail-bg">
+  <div class="row">
+    <div class="col-auto mt-4">
+      <img src="{{ book.cover.url }}" class="border border-warning rounded-3 border-5 img-fluid">
+      <p class="book-detail-content">
+        <strong>Title: </strong>{{ book.title | wordwrap:20 }} <br>
+        <strong>Author: </strong>{{ book.author }} <br>
+        <strong>Genre: </strong>{{ book.genre.all|join:", " }} <br>
+        <strong>ISBN: </strong>{{ book.isbn }} <br>
 
-    <div class="row">
-      <div class="col">
-        <img src="{{ book.cover.url }}" class="border border-warning rounded-3 border-5 img-fluid">
-        <p class="book-detail-content">
-          <strong>Title: </strong>{{ book.title }} </span><br>
-          <strong>Author: </strong>{{ book.author }} <br>
-          <strong>Genre: </strong>{{ book.genre.all|join:", " }} <br>
-          <strong>ISBN: </strong>{{ book.isbn }} <br>
+        {% if checked_out %}
+        <div class="alert alert-success" role="alert">
+            This book has been checked out
+        </div>
+        {% else %}
 
-          {% if checked_out %}
-          <div class="alert alert-success" role="alert">
-              This book has been checked out
-          </div>
-          {% else %}
-
-          {% if user.is_authenticated %}
-          <form method="post" style="margin-top: 1.3em;">
-            {{ borrow_form | crispy }}
-            {% csrf_token %}
-            <button type="submit" class="btn btn-signup btn-lg">Checkout</button>
-          </form>
-          {% endif %}
-          {% endif %}
-          {% if user.is_superuser %}
-            <a class="bg-dark bg-gradient text-info" href="{% url 'update_book' book.slug %}">Update Book Details</a><br>
-            <a class="bg-dark bg-gradient text-info" href="{% url 'delete_book' book.slug %}">Delete Book</a>
-          {% endif %}
-        </p>
-      </div>
-      <div class="col book-synopsis">
-        <p><strong>Synopsis: </strong>{{ book.synopsis | safe }}</p>
-      </div>
-      <div class="col">
-
-      </div>
+        {% if user.is_authenticated %}
+        <form method="post" style="margin-top: 1.3em;">
+          {{ borrow_form | crispy }}
+          {% csrf_token %}
+          <button type="submit" class="btn btn-signup btn-lg">Checkout</button>
+        </form>
+        {% endif %}
+        {% endif %}
+        {% if user.is_superuser %}
+          <a class="bg-dark bg-gradient text-info" href="{% url 'update_book' book.slug %}">Update Book Details</a><br>
+          <a class="bg-dark bg-gradient text-info" href="{% url 'delete_book' book.slug %}">Delete Book</a>
+        {% endif %}
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <section class="book-synopsis"><strong>Synopsis: </strong>{{ book.synopsis | safe }}</section>
     </div>
   </div>
+</div>
 
 
   {% endblock %}
