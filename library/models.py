@@ -22,7 +22,7 @@ class Book(models.Model):
     )
     author = models.CharField(max_length=200)
     synopsis = models.TextField(
-        max_length=2000,
+        max_length=3000,
         help_text='Enter a brief description of the book'
     )
     isbn = models.CharField('ISBN', max_length=13, unique=True)
