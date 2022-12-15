@@ -22,7 +22,7 @@ class GenreList(generic.ListView):
     model = Genre
     queryset = Genre.objects.order_by('name')
     template_name = 'genre_list.html'
-    paginate_by = 6
+    paginate_by = 9
 
 
 class BookIssued(generic.ListView):
