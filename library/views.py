@@ -15,7 +15,7 @@ class BookList(generic.ListView):
     model = Book
     queryset = Book.objects.order_by('title')
     template_name = 'book_list.html'
-    paginate_by = 6
+    paginate_by = 8
 
 
 class GenreList(generic.ListView):
