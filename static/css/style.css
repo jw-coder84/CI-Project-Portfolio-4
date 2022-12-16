@@ -3,7 +3,7 @@ body {
 }
 
 .header-container {
-    height: 80vh;
+    height: 83vh;
 
     background: url('../images/home-page.jpg') no-repeat center center;
     -webkit-background-size: cover;
@@ -19,7 +19,7 @@ body {
 }
 
 .book-list {
-    height: 80vh;
+    height: 83vh;
 
     background: url('../images/book-list.jpg') no-repeat center center;
     -webkit-background-size: cover;
@@ -35,7 +35,7 @@ body {
 }
 
 .genre-list {
-    height: 80vh;
+    height: 83vh;
 
     background: url('../images/book-list.jpg') no-repeat center center;
     -webkit-background-size: cover;
