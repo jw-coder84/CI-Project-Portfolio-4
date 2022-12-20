@@ -33,23 +33,31 @@ The following objectives were created from admin and user perspectives.
 
 <details><summary><b>Site book list page</b></summary>
 
-![Site home image](static/readme/wireframe-list.png)
+![Site book list image](static/readme/wireframe-list.png)
 </details><br>
 
 <details><summary><b>Site book detail page</b></summary>
 
-![Site home image](static/readme/wireframe-detail.png)
+![Site book detail image](static/readme/wireframe-detail.png)
 </details><br>
 
 <details><summary><b>Site sign up page</b></summary>
 
-![Site home image](static/readme/wireframe-signup.png)
+![Site signup image](static/readme/wireframe-signup.png)
 </details><br>
 
 <details><summary><b>Site login page</b></summary>
 
-![Site home image](static/readme/wireframe-login.png)
+![Site login image](static/readme/wireframe-login.png)
 </details><br>
 
 The final designs ended up differing from the wireframe designs. This was simply due to preference of an alternative with the effect on different screen sizes.
+
+### Entity Relationship Diagram
+I created the following diagram in MS Excel. It shows the database tables, fields, field types and the relationships.
+![entity relationship diagram](static/readme/erd.png)
+
+# Features
+
+
 
