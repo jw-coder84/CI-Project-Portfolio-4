@@ -1,108 +1,55 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **_Book Central - Portfolio Project 4_**
 
-Welcome jw-coder84,
+The purpose of this website is to provide a library with an online management system. Using this website, users can browse the selection of available books, view the details of each book and check them out for borrowing. Admin users can create, update and delete records. They can also view a list of books on loan with the corresponding user they are on loan with, and the date the book is due to be returned. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Responsive image](static/readme/responsive-view.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## [View deployed website](https://library-m-system.herokuapp.com/)
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# User Experience
+## User Stories
+I used a Github kanban board with issues to represent individual tasks of my project that will make up my website.
+The following objectives were created from admin and user perspectives.
 
-`python3 -m http.server`
+- As a **Site User** I can **register an account** so that **I can view the selection of books and choose one to borrow**
+- As a **Site User** I can **view a paginated list of books** so that **I can select a book to view it's details**
+- As a **Site User** I can **click a book link** so that **I can view details about the book such as the plot description**
+- As a **Site User** I can **check out a book** so that **I can borrow it to read**
+- As a **Site User** I can **view a list of the books I have checked out** so that **I can track the number of books and the return dates**
+- As a **Site Admin** I can **create, read, update and delete books** so that **I can manage the libraries inventory**
+- As a **Site Admin** I can **view all books that are checked out** so that **I can track number of books and return dates per user**
+- As a **Site Admin** I can **notify users of a fine** so that **I can apply a penalty for overdue books**
 
-A blue button should appear to click: _Make Public_,
+### Guthub project board
+![Project board](static/readme/project-board.png)
 
-Another blue button should appear to click: _Open Browser_.
+### Wireframes
+<br>
+<details><summary><b>Site home page</b></summary>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Site home image](static/readme/wireframe-home.png)
+</details><br>
 
-A blue button should appear to click: _Make Public_,
+<details><summary><b>Site book list page</b></summary>
 
-Another blue button should appear to click: _Open Browser_.
+![Site home image](static/readme/wireframe-list.png)
+</details><br>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<details><summary><b>Site book detail page</b></summary>
 
-To log into the Heroku toolbelt CLI:
+![Site home image](static/readme/wireframe-detail.png)
+</details><br>
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+<details><summary><b>Site sign up page</b></summary>
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Site home image](static/readme/wireframe-signup.png)
+</details><br>
 
-------
+<details><summary><b>Site login page</b></summary>
 
-## Release History
+![Site home image](static/readme/wireframe-login.png)
+</details><br>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The final designs ended up differing from the wireframe designs. This was simply due to preference of an alternative with the effect on different screen sizes.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
