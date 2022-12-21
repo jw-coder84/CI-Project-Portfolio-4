@@ -58,6 +58,53 @@ I created the following diagram in MS Excel. It shows the database tables, field
 ![entity relationship diagram](static/readme/erd.png)
 
 # Features
+- __Navigation Bar__
+    - The nav bar remains at the top of the page across the site.
+    ![Site nav bar](static/readme/site-header.png)
+    - The functionality changes for mobile view.
+    ![mobile nav bar](static/readme/mobile-header.png)
+    - Additional options are shown when logged in as an admin.
+    ![navbar admin](static/readme/navbar-admin.png)
+
+- __Home Page__
+    - The home page features the site name in a Google font. I used library style images for the page backgrounds.
+![Home page](static/readme/landing-page.png)
 
 
+- __Register page__
+    - Users can create an account using the signup form.
+    ![sign up](static/readme/sign-up.png)
 
+- __Login page__
+    - Once an account is created, users can sign in. Admin can also login with this form.
+    ![login](static/readme/login.png)
+
+- __logout page__
+    - Once the logout link has been clicked in the nav bar, users are presented with the following form.
+    ![logout](static/readme/logout.png)
+
+- __Book List page__
+    - The book list page displays a paginated list of the books in the libraries catalog.
+![book list](static/readme/book-list-page.png)
+
+- __Book Detail page__
+    - The book detail page shows all the fields from the book table including the synopsis, to give users insight into what they can expect from the book. The synopsis section is scrollable within a fixed y-axis length.
+    ![book details](static/readme/book-detail-page.png)
+    - When users are logged in, the page features the checkout button.<br>
+    <img src="static/readme/book-detail-user.png" width="272" height="376"><br>
+    - Once the checkout button is clicked a confirmation message is shown to acknowledge the user's action.
+    ![checkout message](static/readme/checkout-book.png)
+    - When logged in as an admin, additional buttons will be shown for updating and deleting the viewed book.
+    <img src="static/readme/book-detail-admin.png" width="272" height="456"><br>
+
+- __Admin front end CRUD functionality__
+    - The link to the Add Book form is on the nav bar when logged in as an admin.
+    ![Add book form](static/readme/add-book-form.png)
+    - Update Book form.
+    ![Update book form](static/readme/update-book-form.png)
+    - Delete Book form.<br>
+    ![Delete book form](static/readme/delete-book-form.png)
+
+- __Books on Loan__
+    - Admin users can view a list of the books that are on loan.
+    ![Books on loan](static/readme/books-onloan-page.png)
