@@ -5,28 +5,25 @@
 <div class="col-12 left book-list">
     <div class="opaque-overlay">&nbsp;</div>
     <div class="container-fluid">
-    <div class="row row-cols-sm-2 row-cols-md-4">
-        {% for book in book_list %}
-        <div class="col-6 col-sm-3">
-            <div class="card-body">
-                 <div class="image-container">
-                    <img src="{{ book.cover.url }}" width="204" height="290" class="border border-warning rounded-3 border-3 mx-auto img-fluid" alt="Book cover image">
+        <div class="row row-cols-sm-2 row-cols-md-4">
+            {% for book in book_list %}
+            <div class="col-6 col-sm-3">
+                <div class="card-body">
+                    <div class="image-container">
+                        <img src="{{ book.cover.url }}" width="204" height="290" class="border border-warning rounded-3 border-3 mx-auto img-fluid" alt="Book cover image">
+                    </div>
+                    <a href="{% url 'book_detail' book.slug %}" class="book-link">
+                        <h6 class="card-title book-title">{{ book.title | truncatechars:19}}</h6>
+                    </a>
                 </div>
-                <a href="{% url 'book_detail' book.slug %}" class="book-link">
-                    <h6 class="card-title book-title">{{ book.title | truncatechars:19}}</h6>
-                </a>
             </div>
-        </div>
 
-        {% if forloop.counter|divisibleby:8 %}
-            </div>
-            <div class="row">
-        {% endif %}
-        {% endfor %}
-            </div>
-        
+            {% if forloop.counter|divisibleby:8 %}
+                </div>
+                <div class="row">
+            {% endif %}
+            {% endfor %}
         </div>
-    </div>
     </div>
     {% if is_paginated %}
     <nav aria-label="Page navigation">

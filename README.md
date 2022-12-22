@@ -92,9 +92,9 @@ I created the following diagram in MS Excel. It shows the database tables, field
     ![book details](static/readme/book-detail-page.png)
     - When users are logged in, the page features the checkout button.<br>
     <img src="static/readme/book-detail-user.png" width="272" height="376"><br>
-    - Once the checkout button is clicked a confirmation message is shown to acknowledge the user's action.
+    - Once the checkout button is clicked a confirmation message is shown to acknowledge the user's action. <br>
     ![checkout message](static/readme/checkout-book.png)
-    - When logged in as an admin, additional buttons will be shown for updating and deleting the viewed book.
+    - When logged in as an admin, additional buttons will be shown for updating and deleting the viewed book. <br>
     <img src="static/readme/book-detail-admin.png" width="272" height="456"><br>
 
 - __Admin front end CRUD functionality__
@@ -108,3 +108,5 @@ I created the following diagram in MS Excel. It shows the database tables, field
 - __Books on Loan__
     - Admin users can view a list of the books that are on loan.
     ![Books on loan](static/readme/books-onloan-page.png)
+    
+# Testing
