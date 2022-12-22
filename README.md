@@ -110,3 +110,41 @@ I created the following diagram in MS Excel. It shows the database tables, field
     ![Books on loan](static/readme/books-onloan-page.png)
     
 # Testing
+
+## HTML
+- Book list page HTML
+    - I encountered an error on the book list page.
+![book list error](static/readme/book-list-error.png)
+
+    - I removed the stray div tags.
+![book list html](static/readme/book-list-html.png)
+
+- Home page HTML
+![home html](static/readme/html-checker.png)
+
+- Book detail page HTML.
+    - There was a warning which recommended using a heading tag (h2 - h6) within the section tag for the synopsis field.
+![book detail html](static/readme/book-detail-html.png)
+
+- Login page HTML
+![login html](static/readme/login-html.png)
+
+- Signup page HTML
+![signup html](static/readme/signup-html.png)
+
+## CSS
+- I received the following result from the CSS validator.
+![css checker](static/readme/css-checker.png)
+
+## Python
+- admin.py
+![admin.py](static/readme/admin-py.png)
+- models.py
+![models.py](static/readme/models-py.png)
+- settings.py
+![settings.py](static/readme/settings-py.png)
+- urls.py
+![urls.py](static/readme/urls-py.png)
+- views.py
+![views.py](static/readme/views-py.png)
+
