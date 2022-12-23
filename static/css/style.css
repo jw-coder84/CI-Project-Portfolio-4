@@ -5,7 +5,7 @@ body {
 .header-container {
     height: 83vh;
 
-    background: url('../images/home-page.jpg') no-repeat center center;
+    background: url('https://res.cloudinary.com/dc3vgawbv/image/upload/v1671794278/static/images/home-page.dc9c7a80affd.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -21,7 +21,7 @@ body {
 .book-list {
     height: 83vh;
 
-    background: url('../images/book-list.jpg') no-repeat center center;
+    background: url('https://res.cloudinary.com/dc3vgawbv/image/upload/v1671794276/static/images/book-list.f3c677da4446.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -37,7 +37,7 @@ body {
 .genre-list {
     height: 83vh;
 
-    background: url('../images/book-list.jpg') no-repeat center center;
+    background: url('https://res.cloudinary.com/dc3vgawbv/image/upload/v1671794276/static/images/book-list.f3c677da4446.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -82,7 +82,7 @@ body {
 .book-detail-bg {
     height: 80vh;
 
-    background: url('../images/book-detail.jpg') no-repeat center center;
+    background: url('https://res.cloudinary.com/dc3vgawbv/image/upload/v1671794275/static/images/book-detail.e09596bc9f31.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
