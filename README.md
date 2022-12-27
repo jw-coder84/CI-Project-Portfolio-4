@@ -109,6 +109,16 @@ I created the following diagram in MS Excel. It shows the database tables, field
     - Admin users can view a list of the books that are on loan.
     ![Books on loan](static/readme/books-onloan-page.png)
     
+## Future Implementations
+- The genres in the nav bar dropdown list all link to the book list page which shows all books. I would like to have implemented a filtered view, only showing books of one genre, matching the genre that the user clicked on in the dropdown list. 
+- To import the genres in the navbar list from the Genre database table using the jinja template code. Currently, the genres are hard coded in the list.
+
+Both of the above functions were attempted but I didn't have time resolve the issues that prevented them from working. 
+
+- Once the return date has been exceeded a fine notification is issued to the user to inform them the book is overdue. I have a method to determine if the book is overdue in the BookIssued db model but didn't have time to implement this feature. A reminder email could also be sent to the user when the return date is approaching.
+
+- If a book is checked out, then the checkout button is replaced with an 'on loan' message. 
+
 # Testing
 
 ## HTML
@@ -182,7 +192,6 @@ To fix this, I needed to add my own 'save' method to the Book class in models.py
 - I set up a page to show a list of the books on loan. I set this up just like the book list page but none of the records would display.
 I had to add the following variable to the BookIssued view class in views.py:<br>
 context_object_name = 'books_issued'<br>
-I then referenced this in the html template code:<br>
+I then referenced the value of this variable in the html template code:<br>
 {% for loan in books_issued %}<br>
 The list of records were then displayed on the page.
-

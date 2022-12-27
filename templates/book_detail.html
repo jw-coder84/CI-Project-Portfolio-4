@@ -25,6 +25,8 @@
           {% csrf_token %}
           <button type="submit" class="btn btn-signup btn-lg">Checkout</button>
         </form>
+        {% else %}
+        <h6 class="book-detail-content">Please register / sign in to checkout book</h6>
         {% endif %}
         {% endif %}
         {% if user.is_superuser %}
