@@ -175,15 +175,15 @@ A coverage report was genereated for my Python automated test files.
 In the DB model I had set width and height attributes for the cover ImageField. The values for these attributes were integers which caused the error. The attribute values needed to be variables which contained the integer measurements. These attributes were optional so I removed them. I set the height in width attributes in the html \<img\> tag.
 
 - The book cover image were not appearing on the site. I needed to include the following line of code in the app urls.py file, after the urlpatterns list.<br>
-\+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)<br>
+`+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)`<br>
 
     I also needed to add the following import statements:<br>
-from django.conf import settings<br>
-from django.conf.urls.static import static<br>
+`from django.conf import settings`<br>
+`from django.conf.urls.static import static`<br>
 
     The settings.py file included:<br>
-MEDIA_URL = '/media/'<br>
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')<br>
+`MEDIA_URL = '/media/'`<br>
+`MEDIA_ROOT = os.path.join(BASE_DIR, 'media')`<br>
 
     With all of the above in place, the images displayed on the site and when a new book was created the cover images were automatically stored in the 'media' directory.
 
@@ -192,7 +192,53 @@ To fix this, I needed to add my own 'save' method to the Book class in models.py
 
 - I set up a page to show a list of the books on loan. I set this up just like the book list page but none of the records would display.
 I had to add the following variable to the BookIssued view class in views.py:<br>
-context_object_name = 'books_issued'<br>
+`context_object_name = 'books_issued'`<br>
 I then referenced the value of this variable in the html template code:<br>
-{% for loan in books_issued %}<br>
+`{% for loan in books_issued %}`<br>
 The list of records were then displayed on the page.
+
+# Technologies used
+* [Github](https://github.com/) - Version control and host of project file repository.
+* [Gitpod](https://gitpod.io) - Development environment.
+* [Heroku](https://www.heroku.com) - Live app hosting service
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) - The structure of the site content.
+* [CSS](https://en.wikipedia.org/wiki/CSS) - The styling and positioning of the content.
+* [Python](https://python.org) - Programming language
+* [Django](https://www.djangoproject.com/) - Web framework
+* [Postgresql](https://www.postgresql.org/) - Open source relational database system
+* [Elephant SQL](https://www.elephantsql.com/) - Database hosting service
+* [Cloudinary](https://cloudinary.com) - Media file hosting service
+* [Google Fonts](https://fonts.google.com/) - Font resource used for the logo.
+* [Balsamiq](https://balsamiq.com/) - Wireframe sofware.
+* [Am I Responsive](https://ui.dev/amiresponsive) - Responsive design image
+
+
+
+# Deployment
+## Elephant SQL
+Instructions for creating an account on https://www.elephantsql.com/ can be found on Code Institute [here](https://code-institute-students.github.io/deployment-docs/02-elephantsql/elephantsql-01-sign-up)
+
+### Seting up database connection from Elephant SQL dashboard
+1. Click on the 'Create new instance' button.
+2. To set up a plan, enter a name and select 'Free' plan.
+3. Choose your region.
+4. Choose a data center. This field is pre-populated with the suitable option.
+5. Clck 'Review' and then 'Create instance'.
+6. Return to the dashboard and click on the database instance name to view the details.
+7. Copy the URL and set this as the value for the DATABASE_URL variable in your app, and for the corresponding config variable in Heroku.
+
+## Heroku
+1. Create free account in Herkou.
+2. Click 'New' and then 'Create new app'.
+3. Enter app name and choose region.
+4. Go to the settings tab and click 'Reveal config vars'.
+5. Add config variables for the apps security key, database URL, Cloudinary URL and PORT.
+6. Add a temporary config var DISABLE_COLLECTSTATIC with a value of 1.
+7. Go to the Delpoy tab and click the Github button for the deployment method.
+8. Enter Github username and repository URL to link account to Heroku.
+9. Click 'Deploy branch' to build the latest version of the app that was pushed to Github.
+10. Add the heroku app domain name to the ALLOWED_HOSTS variable in the apps settings.py file.
+11. For final deployment, delete the DISABLE_COLLECTSTATIC config variable.
+
+# Credits
+
