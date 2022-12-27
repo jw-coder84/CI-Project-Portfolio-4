@@ -117,7 +117,8 @@ Both of the above functions were attempted but I didn't have time resolve the is
 
 - Once the return date has been exceeded a fine notification is issued to the user to inform them the book is overdue. I have a method to determine if the book is overdue in the BookIssued db model but didn't have time to implement this feature. A reminder email could also be sent to the user when the return date is approaching.
 
-- If a book is checked out, then the checkout button is replaced with an 'on loan' message. 
+- If a book is checked out, then the checkout button is replaced with an 'on loan' message.
+- The number of copies of each book could be added to the database and taken into account regarding the display of the checkout button and 'on loan' message.
 
 # Testing
 
