@@ -96,6 +96,9 @@ I created the following diagram in MS Excel. It shows the database tables, field
     - The home page features the site name in a Google font. I used library style images for the page backgrounds.
 ![Home page](static/readme/landing-page.png)
 
+- __Footer__
+    - The footer features links to social media channels.
+![Footer](static/readme/footer.png)
 
 - __Register page__
     - Users can create an account using the signup form.
