@@ -8,6 +8,9 @@ import uuid
 
 
 class Genre(models.Model):
+    """
+    A model for book genres
+    """
     name = models.CharField(max_length=200)
 
     def __str__(self):
@@ -15,6 +18,9 @@ class Genre(models.Model):
 
 
 class Book(models.Model):
+    """
+    A model for books with details
+    """
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     cover = models.ImageField(
@@ -29,8 +35,10 @@ class Book(models.Model):
     genre = models.ManyToManyField(Genre)
 
     def display_genre(self):
-        """Creates a string for the Genre.
-        This is required to display genre in Admin."""
+        """
+        Creates a string for the Genre.
+        This is required to display genre in the backend Admin account.
+        """
         return ', '.join([genre.name for genre in self.genre.all()[:3]])
 
     display_genre.short_description = 'Genre'
@@ -39,16 +47,24 @@ class Book(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        """Returns the URL to access a detail record for this book."""
+        """
+        Returns the URL to access a detailed record for this book.
+        """
         return reverse('book_detail', kwargs={"slug": self.slug})
 
     def save(self, *args, **kwargs):
+        """
+        Auto populates the slug field.
+        """
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
 
 
 class BookIssued(models.Model):
+    """
+    A model for an instance of a book that has been borrowred by a user.
+    """
     expiry = datetime.today() + timedelta(days=14)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     book = models.ForeignKey('Book', on_delete=models.RESTRICT, null=True)
@@ -57,8 +73,10 @@ class BookIssued(models.Model):
 
     @property
     def is_overdue(self):
-        """Determines if the book is overdue based
-        on due date and current date."""
+        """
+        Determines if the book is overdue based
+        on due date and current date.
+        """
         return bool(self.return_date and date.today() > self.return_date)
 
     LOAN_STATUS = (
