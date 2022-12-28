@@ -149,6 +149,8 @@ Both of the above functions were attempted but I didn't have time resolve the is
 - If a book is checked out, then the checkout button is replaced with an 'on loan' message.
 - The number of copies of each book could be added to the database and taken into account regarding the display of the checkout button and 'on loan' message.
 
+- A page for users to view a list of the books they have checked out. I have a user story for this on my Github project board but didn't have time to implement.
+
 [Back to contents](#contents)
 
 # Testing
