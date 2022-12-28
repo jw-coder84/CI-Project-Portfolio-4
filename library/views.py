@@ -12,6 +12,9 @@ def index(request):
 
 
 class BookList(generic.ListView):
+    """
+    View for showing list of books
+    """
     model = Book
     queryset = Book.objects.order_by('title')
     template_name = 'book_list.html'
@@ -26,6 +29,9 @@ class GenreList(generic.ListView):
 
 
 class BookIssued(generic.ListView):
+    """
+    View to list books from the admin account that have been checked out.
+    """
     model = BookIssued
     queryset = BookIssued.objects.filter(status__exact='co').order_by('borrower', 'return_date')
     template_name = 'books_issued.html'
@@ -34,6 +40,10 @@ class BookIssued(generic.ListView):
 
 
 class BookDetail(View):
+    """
+    Displays the books details and contains functionality to create
+    an instance of an issued book when the checkout button is clicked
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Book.objects
         post = get_object_or_404(queryset, slug=slug)

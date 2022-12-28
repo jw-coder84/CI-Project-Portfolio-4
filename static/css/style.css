@@ -1,7 +1,7 @@
 body {
     background-color: #F9FAFC;
 }
-
+/* Background image and arttirbutes for landing page */
 .header-container {
     height: 83vh;
 
@@ -17,7 +17,7 @@ body {
     flex-shrink: 0;
     position: relative;
 }
-
+/* Background image for the book list page */
 .book-list {
     height: 83vh;
 
@@ -49,7 +49,7 @@ body {
  
     position: relative;
 }
-
+/* Darkens the background image */
 .opaque-overlay {
     position: absolute;
     top: 0;
@@ -78,7 +78,7 @@ body {
     font-size: 40px;
     mix-blend-mode:lighten;
 }
-
+/* Background image for the book details page */
 .book-detail-bg {
     height: 80vh;
 
@@ -211,7 +211,7 @@ body {
     border: none;
 }
 
-
+/* Stylng for tablet screen sizes */
 @media screen and (max-width: 900px) {
 
     .book-detail-content {
@@ -234,7 +234,7 @@ body {
 
 }
 
-
+/* Styling for mobile phone screen sizes */
 @media screen and (max-width: 500px) {
 
         .site-name {
