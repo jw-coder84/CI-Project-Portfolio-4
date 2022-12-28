@@ -241,4 +241,25 @@ Instructions for creating an account on https://www.elephantsql.com/ can be foun
 11. For final deployment, delete the DISABLE_COLLECTSTATIC config variable.
 
 # Credits
+## Code
+The Code Insititute Django blog walkrough project was referenced for this project. I referred to 3 library management system walkthrough projects with regards to setup and resolution of technical issues.
 
+* [Mozilla Djago Tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website)
+* [Data-Flair Training](https://data-flair.training/blogs/python-online-library-management-system/)
+* [TechVidvan Tutorials](https://techvidvan.com/tutorials/python-library-management-system/)
+
+Other sites referred to for instructions / technical issues:
+* [StackOverflow](stackoverflow.com/)
+* [Learn Djagno - slug tutorial](https://learndjango.com/tutorials/django-slug-tutorial)
+* [Django docs](https://docs.djangoproject.com/en/4.1/)
+* [Bootstrap docs](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+
+## Content
+
+Image and book info for Arcade Perfect was taken from [goodreads.com](https://www.goodreads.com/en/book/show/53016601-arcade-perfect). The ISBN was taken from [Amazon](https://www.amazon.co.uk/Arcade-Perfect-Pac-Man-Coin-Op-Classics/dp/1079275541/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1672224208&sr=8-1).
+
+All other book images and information were taken from the [Waterstones](waterstones.com/) website.
+
+Background images are stock photos taken from [Pexels free stock photos](https://www.pexels.com/).
+
+## Acknowledgmenets
